@@ -1,0 +1,96 @@
+@startuml class
+
+Character_Archetype <|-- Characters
+Character_Archetype <|-- Archetypes
+Characters <|-- key_moves
+Characters <|-- weaknesses
+Characters <|-- strength
+Characters <|-- standing_punishments
+Characters <|-- while_standing_punishments
+
+class Archetypes {
+- Int id
+- String name
+}
+
+class Character_Archetype
+{
+- Int id
+- Int character_id
+- Int archetype_id
+}
+
+class Characters {
+- Int id
+- Image image
+- String name
+- String description 
+---
+- Int execution
+- Int poking
+- Int keepout
+- Int damage_output
+- Int throw_game
+- Int evasiveness
+- Int movement
+- Int mixup
+- Int Party_potential
+- Int space_control
+- Int Okizeme
+---
+~ Relation key_moves
+~ Relation standing_punishments
+~ Relation while_standing_punishments
+~ Relation archetype_id
+~ Relation weaknesses
+~ Relation strengths
+}
+
+class User {
+- Int id
+- String username
+- String passeword
+- Array Role
+}
+
+class key_moves{
+- int id
+- string move
+- string startup_frame
+- string on_block
+- string on_hit
+- string on_ch
+- string sidestep
+---
+~ relation character_id
+}
+
+class weaknesses {
+- int id
+- string content
+~ relation character_id
+}
+
+class strength{
+- int id
+- string content
+~ relation character_id
+}
+
+class standing_punishments {
+- int id
+- string input
+- string frame
+- string description
+~ relation character_id
+}
+
+class while_standing_punishments
+{
+- int id
+- string input
+- string frame
+- string description
+~ relation character_id
+}
+@enduml
