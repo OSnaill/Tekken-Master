@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('archetypes', function (Blueprint $table) {
+        Schema::create('character_archetype', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('character_id');
+            $table->foreignId('archetype_id');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('archetypes');
+        Schema::dropIfExists('character_archetype');
     }
 };
