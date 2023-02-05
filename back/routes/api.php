@@ -19,5 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/character_list', [CharacterController::class, 'characterList']);
-Route::get('/character_list/{character}', [CharacterController::class, 'characterDetails']);
+Route::get('/characters', [CharacterController::class, 'characterList']);
+Route::get('/characters/{character}', [CharacterController::class, 'characterDetails']);
+Route::post('/characters/store', [CharacterController::class, 'storeCharacter']);

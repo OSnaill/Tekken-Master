@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Character extends Model
+class Archetype extends Model
 {
     use HasFactory;
-
-    public function archetypes()
+    
+    public function characters()
     {
-        return $this->belongsToMany(Archetype::class, 'character_archetype');
+        return $this->belongsToMany(Character::class, 'character_archetype');
     }
 }
