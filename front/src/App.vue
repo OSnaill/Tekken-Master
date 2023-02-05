@@ -32,10 +32,14 @@ h1 {
 h2 {
   font-family: "Roboto";
   font-size: 1.4em;
+  color: var(--crimson-red);
+  font-weight: bold;
+  padding: 20px;
 }
 h3 {
   font-family: "Roboto";
   font-size: 1.1em;
+  color: #dd1d5b;
 }
 p,
 a {
