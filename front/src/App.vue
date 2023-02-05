@@ -1,13 +1,47 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
 <template>
-  <header class="w-full h-[100px]">
-      <h1>Tekken <span class="text-tekken-red">Academy</span></h1>
-  </header>
+  <HeaderComponent />
+  <router-view />
 </template>
+<script>
+import HeaderComponent from "./components/HeaderComponent";
+export default {
+  components: {
+    HeaderComponent,
+  },
+};
+</script>
+<style>
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "Varela";
+  src: url(./fonts/Varela.ttf);
+}
+:root {
+  --night-blue: #0d1c30;
+  --crimson-red: #dd1d5b;
+  --sky-blue: #e8ffff;
+}
 
-<style scoped>
+h1 {
+  font-family: "Roboto";
+  font-size: 1.7em;
+}
+h2 {
+  font-family: "Roboto";
+  font-size: 1.4em;
+}
+h3 {
+  font-family: "Roboto";
+  font-size: 1.1em;
+}
+p,
+a {
+  font-family: "Varela";
+}
+a {
+  color: var(--crimson-red);
+}
 </style>
