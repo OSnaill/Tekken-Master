@@ -10,8 +10,12 @@
   </section>
 </template>
 <script>
+import { useCharactersStore } from "@/stores/CharacterStore";
 export default {
-  data() {},
+  setup() {
+    const store = useCharactersStore();
+    return { store };
+  },
 };
 </script>
 <style lang="scss">
